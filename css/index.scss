@@ -1,0 +1,38 @@
+//====================|varaiable|====================//
+$color-LightGray: #f5f5f5;
+$color-red: #fd7126;
+$color-black: #2b2b2b;
+$color-text: #666666;
+$color-border: #E5E5E5;
+//====================|Tags|====================//
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $color-LightGray;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+//====================|General-class|====================//
+.middle {
+    margin: 0 auto;
+    max-width: 1300px;
+    padding-left: 20px;
+    padding-right: 20px;
+}

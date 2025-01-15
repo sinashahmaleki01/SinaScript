@@ -10,25 +10,31 @@
 
 <body>
     <main>
+        <ul id="notification"></ul>
         <div class="middle">
             <h1>Expense Tracker</h1>
+            <div id="your_balance"></div>
             <h2>your balance</h2>
-            <div class="fee"></div>
+            <ul id="price_balance"></ul>
             <h2>History</h2>
-            <table></table>
+            <table id="data_list"></table>
             <h2>Add new transaction</h2>
             <form action="">
-                <label for="">text</label>
-                <input type="text" placeholder="Enter text ...">
-                <label for="">Amount</label>
-                <input type="text" placeholder="Enter Amount ...">
+                 <label for="">
+                    
+                    <input type="text" placeholder="Enter text ..." id="input_title">
+                 </label>
+                <label for="">
+                    
+                    <input type="text" placeholder="Enter Amount ..." id="input_price">
+                </label>
                 <input type="button" value="Add transaction" id="transaction">
             </form>
         </div>
     </main>
+    
 </body>
 <script src="./js/index.js"></script>
 <script src="./js/modal.js"></script>
 <script src="./js/notification.js"></script>
-
 </html>

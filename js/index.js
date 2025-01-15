@@ -34,15 +34,20 @@ function clear_input() {
 //====================|function:price_balance|=======================//
 function price_balance() {
     let price_balance = document.getElementById("price_balance")
-    let income = document.createElement("li")
-    let expense = document.createElement("li")
-    income.setAttribute("id", "income_section")
-    expense.setAttribute("id", "outcome_section")
+    let income = document.getElementById("income_section");
+    let expense = document.getElementById("expense_section");
+    
+    if (!income) {
+        income = document.createElement("li");
+        income.setAttribute("id", "income_section");
+        price_balance.appendChild(income);
+    }
 
-
-    price_balance.appendChild(income)
-    price_balance.appendChild(expense)
-
+    if (!expense) {
+        expense = document.createElement("li");
+        expense.setAttribute("id", "expense_section");
+        price_balance.appendChild(expense);
+    }
    
     let income_total = 0
     let expense_total = 0

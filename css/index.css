@@ -78,7 +78,7 @@ main .middle ul#price_balance {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 40px;
+  gap: 20px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -89,6 +89,10 @@ main .middle ul#price_balance {
   background-color: white;
   -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+main .middle ul#price_balance li {
+  font-size: 18px;
+  color: rgba(167, 77, 77, 0.942);
 }
 main .middle table tbody tr {
   cursor: pointer;
@@ -246,4 +250,10 @@ label input {
 .title-desc {
   width: 400px !important;
   padding: 10px 20px !important;
+}
+
+#your_balance {
+  font-size: 18px;
+  font-weight: 700;
+  color: #484847;
 }/*# sourceMappingURL=index.css.map */

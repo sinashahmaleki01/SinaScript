@@ -3,7 +3,7 @@ let input_price = document.getElementById("input_price")
 const fetchedData = []
 //====================|function:transaction|=======================//
 document.getElementById("transaction").addEventListener("click", function () {
-    if (input_title.value == "" || input_price.value == "" ||  isNaN(input_price.value)) {
+    if (input_title.value == "" || input_price.value == "" || isNaN(input_price.value)) {
         validation(input_title, "Fill in the text")
         validation(input_price, "Fill in the Amount")
         return;
@@ -71,7 +71,6 @@ function price_balance() {
             }
         }
     }
-    console.log(expense_total);
     income.textContent = 'income : +$'+income_total
     expense.textContent = 'expense : -$'+expense_total
     document.getElementById("your_balance").textContent = "$" + ( income_total + expense_total)

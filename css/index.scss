@@ -3,6 +3,7 @@ $color-primary: #484847;
 $color-secondary: rgba(131, 131, 129, 1);
 $color-btn: rgba(105, 91, 188, 1);
 
+$color-red:rgba(167, 77, 77, 0.942);
 //====================|Tags|====================//
 * {
     margin: 0;
@@ -70,12 +71,16 @@ main {
         }
         ul#price_balance{
             display: flex;
-            gap: 40px;
+            gap: 20px;
             align-items: center;
             justify-content: space-between;
             padding: 20px 30px;
             background-color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            li{
+                font-size: 18px;
+                color: $color-red;
+            }
         }
         table{
             tbody{
@@ -188,4 +193,9 @@ label{
 .title-desc {
     width: 400px !important;
     padding: 10px 20px !important;
+}
+#your_balance{
+    font-size: 18px;
+    font-weight: 700;
+    color: $color-primary;
 }

@@ -34,26 +34,26 @@ function clear_input() {
 //====================|function:price_balance|=======================//
 function price_balance() {
     let price_balance = document.getElementById("price_balance")
-    let income = document.getElementById("income_section");
-    let expense = document.getElementById("expense_section");
-    
+    let income = document.getElementById("income_section")
+    let expense = document.getElementById("expense_section")
+
     if (!income) {
-        income = document.createElement("li");
-        income.setAttribute("id", "income_section");
-        price_balance.appendChild(income);
+        income = document.createElement("li")
+        income.setAttribute("id", "income_section")
+        price_balance.appendChild(income)
     }
 
     if (!expense) {
         expense = document.createElement("li");
-        expense.setAttribute("id", "expense_section");
-        price_balance.appendChild(expense);
+        expense.setAttribute("id", "expense_section")
+        price_balance.appendChild(expense)
     }
    
     let income_total = 0
     let expense_total = 0
 
     for (let i = 0; i < fetchedData.length; i++) {
-        const price = Number(fetchedData[i].price);
+        const price = Number(fetchedData[i].price)
         if (!isNaN(price)) {
             if (price > 0) {
                 income_total = income_total + price
@@ -63,6 +63,7 @@ function price_balance() {
         }
     }
     console.log(expense_total);
-    income.textContent = `income: ${income_total}`;
-    expense.textContent = `expense: ${expense_total}`;
+    income.textContent = 'income : $'+income_total
+    expense.textContent = 'expense : $'+expense_total
+    document.getElementById("your_balance").textContent =  income_total + expense_total
 }

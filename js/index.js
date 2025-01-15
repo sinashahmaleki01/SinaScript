@@ -3,6 +3,13 @@ let input_price = document.getElementById("input_price")
 const fetchedData = []
 //====================|function:transaction|=======================//
 document.getElementById("transaction").addEventListener("click", function () {
+    if (input_title.value == "" || input_price.value == "" ||  isNaN(input_price.value)) {
+        validation(input_title, "Fill in the text")
+        validation(input_price, "Fill in the Amount")
+        return;
+    }
+    validation(input_title)
+    validation(input_price)
     fetchedData.push({
         title: input_title.value,
         price: input_price.value,
@@ -10,6 +17,8 @@ document.getElementById("transaction").addEventListener("click", function () {
     })
     refreshTable()
     price_balance()
+    notification('description&title', "New Item Was Added")
+
 })
 //====================|function:refreshTable|=======================//
 function refreshTable() {
@@ -19,7 +28,7 @@ function refreshTable() {
         data_list.innerHTML +=
             "<tr id='data_item'>" +
             "<td>" + items.title + "</td>" +
-            "<td>" + items.price + "</td>" +
+            "<td>$" + items.price + "</td>" +
             "</tr>"
         clear_input()
     })
@@ -63,7 +72,16 @@ function price_balance() {
         }
     }
     console.log(expense_total);
-    income.textContent = 'income : $'+income_total
-    expense.textContent = 'expense : $'+expense_total
-    document.getElementById("your_balance").textContent =  income_total + expense_total
+    income.textContent = 'income : +$'+income_total
+    expense.textContent = 'expense : -$'+expense_total
+    document.getElementById("your_balance").textContent = "$" + ( income_total + expense_total)
+}
+//====================|function_validation|====================// 
+function validation(el, error) {
+    if (el.value === "") {
+        el.closest("label").setAttribute("data-error", error)
+    }
+    else {
+        el.closest("label").removeAttribute("data-error")
+    }
 }

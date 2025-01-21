@@ -9,10 +9,6 @@ document.getElementById("transaction").addEventListener("click", function () {
         validation(input_price, "Enter a valid number")
         return
     }
-    if (!isNaN(input_title.value)) {
-        validation(input_title, "ertret")
-        return
-    }
     validation(input_price)
     validation(input_title)
     fetchedData.push({
@@ -126,6 +122,7 @@ function onclick_ok_Delete(index) {
     fetchedData.splice(index, 1)
     refreshTable()
     closeModal()
+    price_balance()
     notification('description&title', "Item Was Deleted")
 }
 //=====================|onclick_cancel|====================// 

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="./fontawesome-free-6.5.2-web/css/all.css">
     <link rel="stylesheet" href="./css/index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
 
 <body>
     <main>
+        <div class="overlay"></div>
         <ul id="notification"></ul>
         <div class="middle">
             <h1>Expense Tracker</h1>
@@ -21,12 +23,14 @@
             <h2>Add new transaction</h2>
             <form action="">
                  <label for="">
-                    
+                    text
                     <input type="text" placeholder="Enter text ..." id="input_title">
                  </label>
                 <label for="">
-                    
+                    Amount
+                    (negetive-expense , positive-income)
                     <input type="text" placeholder="Enter Amount ..." id="input_price">
+                    
                 </label>
                 <input type="button" value="Add transaction" id="transaction">
             </form>
@@ -35,6 +39,5 @@
     
 </body>
 <script src="./js/index.js"></script>
-<script src="./js/modal.js"></script>
-<script src="./js/notification.js"></script>
+<script src="./js/shared.js"></script>
 </html>

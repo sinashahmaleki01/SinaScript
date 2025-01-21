@@ -11,7 +11,7 @@ html {
 
 body {
   font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 ul {
@@ -58,7 +58,8 @@ main .middle form {
   gap: 30px;
 }
 main .middle form label {
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: 500;
 }
 main .middle form input[type=text] {
   padding: 10px;
@@ -74,7 +75,7 @@ main .middle form input[type=button] {
   cursor: pointer;
   border: none;
 }
-main .middle ul#price_balance {
+main .middle ul#price_balance li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,19 +90,25 @@ main .middle ul#price_balance {
   background-color: white;
   -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-main .middle ul#price_balance li {
   font-size: 18px;
   color: rgba(167, 77, 77, 0.942);
 }
 main .middle table tbody tr {
-  cursor: pointer;
   background-color: white;
 }
 main .middle table tbody tr td {
   padding: 10px;
   -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+main .middle table tbody tr td:nth-child(3) {
+  cursor: pointer;
+}
+main .middle table tbody tr td:nth-child(3) i {
+  padding: 10px;
+  font-size: 18px;
+  background-color: rgb(246, 247, 242);
 }
 
 label[data-error] input {
@@ -115,16 +122,17 @@ label[data-error] {
 label[data-error]::after {
   content: attr(data-error);
   color: red;
-  font-size: 14px;
+  font-size: 16px;
   position: absolute;
   left: 0;
-  top: 40px;
+  top: 70px;
 }
 
 label {
   width: 100%;
 }
 label input {
+  margin-top: 10px;
   width: 100%;
 }
 
@@ -256,4 +264,105 @@ label input {
   font-size: 18px;
   font-weight: 700;
   color: #484847;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+#modal {
+  width: 500px;
+  padding: 15px 20px;
+  display: grid;
+  grid-template: "close" 30px "content" 50px "." auto/auto;
+  gap: 10px;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  /* Start position: out of view above */
+  visibility: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.open-modal {
+  visibility: visible !important;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: slideDownCenter 0.5s ease-out forwards;
+          animation: slideDownCenter 0.5s ease-out forwards;
+}
+
+@-webkit-keyframes slideDownCenter {
+  0% {
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(-50%, 100%);
+            transform: translate(-50%, 100%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownCenter {
+  0% {
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(-50%, 100%);
+            transform: translate(-50%, 100%);
+    opacity: 1;
+  }
+}
+.close-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.fa {
+  cursor: pointer;
+  grid-area: close;
+  justify-self: end;
+  font-size: 18px;
+}
+
+.content {
+  grid-area: content;
+}
+.content p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #2b2b2b;
+}
+
+.button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+.button-container button {
+  padding: 10px;
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */

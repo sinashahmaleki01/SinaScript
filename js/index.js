@@ -3,14 +3,17 @@ let input_price = document.getElementById("input_price")
 const fetchedData = []
 //====================|function:transaction|=======================//
 document.getElementById("transaction").addEventListener("click", function () {
+    /* Meysam:
+    *  you need 2 types of error, empty and incorrect input validation
+    */
 
     if (input_title.value == "" || input_price.value == "" || isNaN(input_price.value)) {
         validation(input_title, "Fill in the text")
         validation(input_price, "Enter a valid number")
         return
     }
-    validation(input_price)
-    validation(input_title)
+    validation(input_price) /* Meysam: error function has 2 parameters, where is the "error" argument? */
+    validation(input_title) /* Meysam: error function has 2 parameters where is the "error" argument? */
     fetchedData.push({
         title: input_title.value,
         price: input_price.value,
@@ -18,7 +21,7 @@ document.getElementById("transaction").addEventListener("click", function () {
     })
     refreshTable()
     price_balance()
-    notification('description&title', "New Item Was Added")
+    notification('description&title', "New Item Was Added")  /* Meysam: what kind of mode is this? */
 
 })
 //====================|function:refreshTable|=======================//
@@ -78,6 +81,11 @@ function price_balance() {
     document.getElementById("your_balance").textContent = "$" + (income_total + expense_total)
 }
 //====================|function_validation|====================// 
+/*
+* Meysam:
+* set a default value for "error" argument if you don't want to be set all the time
+* like this: function validation(el, error = '')
+*/
 function validation(el, error) {
     if (el.value === "" || (el === input_price && isNaN(el.value))) {
         el.closest("label").setAttribute("data-error", error)
@@ -107,17 +115,26 @@ function onclick_delete(index) {
 
 }
 //=====================|closeModal|====================// 
+/* Meysam:
+ * i said move it to shared.js file
+ */
 function closeModal() {
     overlay.style.display = "none"
     modal.remove()
 }
 
 //=====================|openModal|====================// 
+/* Meysam:
+ * i said move it to shared.js file
+ */
 function openModal() {
     console.log(modal);
     modal.classList.add("open-modal")
 }
 //=====================|onclick_ok_Delete|====================// 
+/* Meysam:
+ * what kind of name is this ? "onclick_ok_Delete" ??!! what is that mean
+ */
 function onclick_ok_Delete(index) {
     fetchedData.splice(index, 1)
     refreshTable()
@@ -126,6 +143,9 @@ function onclick_ok_Delete(index) {
     notification('description&title', "Item Was Deleted")
 }
 //=====================|onclick_cancel|====================// 
+/* Meysam:
+ * i said move it to shared.js file
+ */
 function onclick_cancel() {
     closeModal()
 }
